@@ -13,7 +13,9 @@ class CommentBloc extends Bloc<CommentEvent, CommentState> {
     });
   }
   void handleActionBloc() async {
-    print(state.commentList.length);
+    if (kDebugMode) {
+      print(state.commentList.length);
+    }
     final newLoad =
         await getCommentFromApi(state.commentList.length, 10).then((value) {
       return value;

@@ -1,5 +1,3 @@
-import 'package:equatable/equatable.dart';
-
-enum CommentEvent{
+enum CommentEvent {
   loadMore;
 }
