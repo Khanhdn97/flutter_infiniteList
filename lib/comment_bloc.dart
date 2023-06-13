@@ -13,19 +13,12 @@ class CommentBloc extends Bloc<CommentEvent, CommentState> {
     });
   }
   void handleActionBloc() async {
-    if (kDebugMode) {
-      print(state.commentList.length);
-    }
     final newLoad =
         await getCommentFromApi(state.commentList.length, 10).then((value) {
       return value;
     });
-    if (kDebugMode) {
-      print(newLoad);
-    }
+
     emit(state.add(newLoad));
-    if (kDebugMode) {
-      print(state.commentList);
-    }
+
   }
 }

@@ -24,9 +24,6 @@ class _InfiniteListPageState extends State<InfiniteListPage> {
     scrollController.addListener(() {
       if (scrollController.position.pixels ==
           scrollController.position.maxScrollExtent) {
-        if (kDebugMode) {
-          print('object');
-        }
         commentBloc.handleActionBloc();
       }
     });
